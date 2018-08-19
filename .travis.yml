@@ -1,0 +1,8 @@
+language: node_js
+node_js: lts/carbon
+
+install:
+  - yarn install
+
+script:
+  - yarn run verify
