@@ -1,5 +1,7 @@
 # nullable-ts
 
+[![Build Status](https://travis-ci.org/MichaelRBond/nullable-ts.svg?branch=master)](https://travis-ci.org/MichaelRBond/nullable-ts)
+
 A Nullable type for TypeScript.
 
 `type Nullable<T> = T | null;`
