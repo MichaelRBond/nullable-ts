@@ -1,4 +1,5 @@
 export declare type Nullable<T> = T | null;
+export declare function get<T>(x: Nullable<T>): T;
 export declare function orElseThrow<T>(x: Nullable<T>, err: Error): T;
 export declare function orElse<T>(x: Nullable<T>, defaultVal: T): T;
 export declare function isNull(x: any): boolean;

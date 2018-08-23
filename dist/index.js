@@ -1,5 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+function get(x) {
+    return orElseThrow(x, new Error("Attempting to retrieve value from null or undefined variable"));
+}
+exports.get = get;
 function orElseThrow(x, err) {
     if (isNullOrUndefined(x)) {
         throw err;
