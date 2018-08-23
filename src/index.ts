@@ -1,5 +1,9 @@
 export type Nullable<T> = T | null;
 
+export function get<T>(x: Nullable<T>): T {
+  return orElseThrow(x, new Error("Attempting to retrieve value from null or undefined variable"));
+}
+
 export function orElseThrow<T>(x: Nullable<T>, err: Error): T {
   if (isNullOrUndefined(x)) {
     throw err;

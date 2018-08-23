@@ -1,4 +1,5 @@
 import {
+  get,
   isDefined,
   isNotNull,
   isNotNullorUnDefined,
@@ -121,6 +122,30 @@ describe("nullable", () => {
 
     it("returns the value if it is not null", () => {
       expect(orElse<string>("foo", "bar")).toEqual("foo");
+    });
+  });
+
+  describe("get", () => {
+    it("returns the provided non-null value", () => {
+      expect(get("foo")).toEqual("foo");
+    });
+
+    it("throws an error if the provided value is null", () => {
+      try {
+        get(null);
+        fail();
+      } catch (err) {
+        expect(err.message).toEqual("Attempting to retrieve value from null or undefined variable");
+      }
+    });
+
+    it("throws an error if the provided value is undefined", () => {
+      try {
+        get(undefined);
+        fail();
+      } catch (err) {
+        expect(err.message).toEqual("Attempting to retrieve value from null or undefined variable");
+      }
     });
   });
 });
