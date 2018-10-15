@@ -19,7 +19,7 @@ export function isNull(x: any): boolean {
   return x === null;
 }
 
-export function isNotNull(x: any): boolean {
+export function isNotNull<T>(x: T): x is T {
   return x !== null;
 }
 
@@ -27,7 +27,7 @@ export function isUndefined(x: any): boolean {
   return x === undefined;
 }
 
-export function isDefined(x: any): boolean {
+export function isDefined<T>(x: T): x is T {
   return x !== undefined;
 }
 
@@ -35,6 +35,6 @@ export function isNullOrUndefined(x: any): boolean {
   return isNull(x) || isUndefined(x);
 }
 
-export function isNotNullorUnDefined(x: any): boolean {
+export function isNotNullorUnDefined<T>(x: T): x is T {
   return isNotNull(x) && isDefined(x);
 }

@@ -37,6 +37,10 @@ describe("nullable", () => {
     it("returns true when a non-null value is provided", () => {
       expect(isNotNull("foo")).toEqual(true);
     });
+
+    it("correctly handles strict null checking", () => {
+
+    });
   });
 
   describe("isNullOrUndefined", () => {
