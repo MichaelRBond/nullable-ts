@@ -39,7 +39,13 @@ describe("nullable", () => {
     });
 
     it("correctly handles strict null checking", () => {
-
+      const y: {a: string} | null = {a: "foo"};
+      if (isNotNull(y)) {
+        const z: string = y.a;
+        expect(z).toEqual("foo");
+      } else {
+        fail();
+      }
     });
   });
 

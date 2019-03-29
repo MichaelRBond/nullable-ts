@@ -15,7 +15,7 @@ export function orElse<T>(x: Nullable<T>, defaultVal: T): T {
   return isNullOrUndefined(x) ? defaultVal : x as T;
 }
 
-export function isNull(x: any): boolean {
+export function isNull(x: any): x is null {
   return x === null;
 }
 
@@ -23,7 +23,7 @@ export function isNotNull<T>(x: T): x is T {
   return x !== null;
 }
 
-export function isUndefined(x: any): boolean {
+export function isUndefined(x: any): x is undefined {
   return x === undefined;
 }
 
@@ -31,7 +31,7 @@ export function isDefined<T>(x: T): x is T {
   return x !== undefined;
 }
 
-export function isNullOrUndefined(x: any): boolean {
+export function isNullOrUndefined(x: any): x is undefined | null {
   return isNull(x) || isUndefined(x);
 }
 
